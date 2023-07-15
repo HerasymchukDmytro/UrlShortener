@@ -25,6 +25,7 @@ namespace UrlShortener.Controllers
             {
                 Url = result
             };
+
             return Ok(resultUrl);
         }
 
