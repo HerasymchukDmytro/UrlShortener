@@ -21,7 +21,11 @@ namespace UrlShortener.Controllers
         {
             Url sUrl = _shortener.CreateShortUrl(url).Result;
             var result = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/{sUrl.shortUrl}";
-            return Ok(result);
+            UrlDto resultUrl = new UrlDto()
+            {
+                Url = result
+            };
+            return Ok(resultUrl);
         }
 
         

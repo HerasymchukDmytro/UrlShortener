@@ -1,0 +1,20 @@
+<form #form="ngForm" (ngSubmit)="create()">
+    <div class="m-5 flex place-content-center">
+        <input [(ngModel)]="longUrl.url" type="url" name="url" id="url" placeholder="google.com" required="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg w-2/3 p-2 ">
+        <button type="submit" class=" m-2 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                Create
+            </span>
+          </button>
+    </div>
+</form>
+
+
+<div class="place-content-center my-10 flex">
+    <label class="p-3">{{result}}</label>
+    <button class=" relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Copy
+        </span>
+      </button>
+</div>

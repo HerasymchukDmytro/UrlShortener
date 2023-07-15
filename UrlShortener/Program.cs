@@ -25,11 +25,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(policy =>policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
 app.MapFallback(async (UrlDbContext context, HttpContext ctx) =>
 {
     var path = ctx.Request.Path.ToUriComponent().Trim('/');
-    var urlMatch = await context.Urls.FirstOrDefaultAsync(x=>
-        x.shortUrl.Trim()==path.Trim());
+    var urlMatch = await context.Urls.FirstOrDefaultAsync(x =>
+        x.shortUrl.Trim() == path.Trim());
     if (urlMatch == null)
     {
         return Results.BadRequest("Invalid short url");
