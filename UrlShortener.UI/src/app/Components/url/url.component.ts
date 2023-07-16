@@ -25,4 +25,10 @@ export class UrlComponent {
       }
     })
   }
+
+  copyToClipboard(inputElement: HTMLInputElement){
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
+  }
 }
